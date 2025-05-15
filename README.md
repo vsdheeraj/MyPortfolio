@@ -61,3 +61,47 @@ To run this project locally:
 6. Start the development server:
    ```bash
    python manage.py runserver
+
+
+## Features
+
+- Custom user authentication (login/register)
+- Blog post creation/editing with CKEditor 5
+- Theme switcher (light/dark modes)
+- Contact form with email sending
+- Responsive design
+
+## Technologies
+
+- Django 4.2
+- PostgreSQL (production)
+- AWS S3 (for media storage)
+- CKEditor 5
+- Crispy Forms
+- Whitenoise
+
+## Setup
+
+1. Clone the repository
+2. Create and activate virtual environment
+3. Install requirements: `pip install -r requirements.txt`
+4. Create `.env` file with your credentials (see `.env.example`)
+5. Run migrations: `python manage.py migrate`
+6. Start development server: `python manage.py runserver`
+
+## Environment Variables
+
+Required variables are:
+- `SECRET_KEY`
+- `DB_*` (for database connection)
+- `MY_EMAIL` and `MY_PASSWORD` (for email sending)
+- `AWS_*` (for S3 storage)
+
+## Deployment
+
+Configured for AWS deployment with:
+- RDS PostgreSQL
+- S3 Bucket for media storage
+- Elastic Beanstalk (optional)
+
+
