@@ -94,26 +94,26 @@ WSGI_APPLICATION = "dheerajportfolio.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 
 # Database(postgres) Settings
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        "NAME": os.environ.get("DB_NAME"),               # Replace with your RDS DB name
-        'USER': os.environ.get("DB_USER"),               # Replace with the master username
-        'PASSWORD': os.environ.get("DB_PASSWORD"),       # Replace with your RDS password
-        'HOST': os.environ.get("DB_HOST"),               # Replace with the RDS endpoint (e.g., my-database-name.cw5dtc8bmgtj.us-east-1.rds.amazonaws.com)
-        'PORT': int(os.environ.get("DB_PORT", "5432")),  # Default PostgreSQL port
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         "NAME": os.environ.get("DB_NAME"),               # Replace with your RDS DB name
+#         'USER': os.environ.get("DB_USER"),               # Replace with the master username
+#         'PASSWORD': os.environ.get("DB_PASSWORD"),       # Replace with your RDS password
+#         'HOST': os.environ.get("DB_HOST"),               # Replace with the RDS endpoint (e.g., my-database-name.cw5dtc8bmgtj.us-east-1.rds.amazonaws.com)
+#         'PORT': int(os.environ.get("DB_PORT", "5432")),  # Default PostgreSQL port
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -262,26 +262,26 @@ CKEDITOR_5_CONFIGS = {
     }
 }
 
-# AWS S3 Settings
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
-AWS_S3_FILE_OVERWRITE = os.environ.get("AWS_S3_FILE_OVERWRITE") == "True"
-AWS_DEFAULT_ACL = os.environ.get("AWS_DEFAULT_ACL", None)
-AWS_S3_SIGNATURE_NAME = os.environ.get("AWS_S3_SIGNATURE_NAME")
-AWS_S3_VERIFY = os.environ.get("DEBAWS_S3_VERIFYUG") == "True"
+# # AWS S3 Settings
+# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+# AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
+# AWS_S3_FILE_OVERWRITE = os.environ.get("AWS_S3_FILE_OVERWRITE") == "True"
+# AWS_DEFAULT_ACL = os.environ.get("AWS_DEFAULT_ACL", None)
+# AWS_S3_SIGNATURE_NAME = os.environ.get("AWS_S3_SIGNATURE_NAME")
+# AWS_S3_VERIFY = os.environ.get("DEBAWS_S3_VERIFYUG") == "True"
 
-STORAGES = {
-    # Media file (image) management
-    "default": {
-        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  
-    },
-    # CSS and JS file management
-    "staticfiles": {
-        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
-    },
-}
+# STORAGES = {
+#     # Media file (image) management
+#     "default": {
+#         "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",  
+#     },
+#     # CSS and JS file management
+#     "staticfiles": {
+#         "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+#     },
+# }
 
 
 # for Django<4.2
