@@ -26,6 +26,9 @@ class PostForm(forms.ModelForm):
         fields = '__all__'
         widgets = { 
                    'tags' : forms.CheckboxSelectMultiple(),         
+                   'github_url': forms.URLInput(attrs={
+                       'placeholder': 'https://github.com/username/repo'
+                   }),
                     # 'created' : forms.DateTimeInput(attrs={
                     #                                         'type':'datetime-local', 
                     #                                         'max': datetime.now().strftime('%Y-%m-%dT%H:%M')

@@ -16,6 +16,13 @@ class Post(models.Model):
     headline = models.CharField(max_length=200)
     sub_headline = models.CharField(max_length=200, null=True, blank=True)
     thumbnail = models.ImageField(null=True, blank=True, upload_to="images", default="/images/placeholder.png")
+    github_url = models.URLField(
+        "GitHub repository URL",
+        max_length=500,
+        null=True,
+        blank=True,
+        help_text="Optional. Example: https://github.com/username/repo",
+    )
     body = CKEditor5Field(config_name='extends')
     created = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
